@@ -1,27 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Scan Resi In/Out</title>
+  <title>SCAN TITAN COMPANY</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="container">
-    <h1>Sistem Scan Resi</h1>
+<div class="container">
+  <h1>SCAN TITAN COMPANY</h1>
 
-    <input type="text" id="resiInput" placeholder="Scan / Input Resi">
-    
+  <div class="stats">
+    <div class="card"><span id="inboundCount">0</span><br>Inbound</div>
+    <div class="card"><span id="outboundCount">0</span><br>Outbound</div>
+    <div class="card"><span id="pendingCount">0</span><br>Pending</div>
+    <div class="card"><span id="reconCount">0</span><br>Rekonsiliasi</div>
+  </div>
+
+  <div class="scanner-box">
+    <input type="text" id="resiInput" placeholder="Scan nomor resi">
     <select id="statusInput">
       <option value="inbound">Inbound</option>
       <option value="outbound">Outbound</option>
     </select>
-
     <button onclick="saveResi()">Simpan</button>
-
-    <h2>History</h2>
-    <div id="history"></div>
   </div>
 
-  <script type="module" src="app.js"></script>
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Cari resi..." onkeyup="searchResi()">
+  </div>
+
+  <h2>History</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Resi</th>
+        <th>Kurir</th>
+        <th>Status</th>
+        <th>Printed</th>
+        <th>Aksi</th>
+      </tr>
+    </thead>
+    <tbody id="historyTable"></tbody>
+  </table>
+
+  <h2>Rekonsiliasi</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Resi</th>
+        <th>Kurir</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody id="reconTable"></tbody>
+  </table>
+
+  <h2>Double Resi</h2>
+  <div id="duplicateList"></div>
+
+</div>
+
+<script type="module" src="app.js"></script>
 </body>
 </html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scan Resi In/Out</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Sistem Scan Resi</h1>
+
+    <input type="text" id="resiInput" placeholder="Scan / Input Resi">
+    
+    <select id="statusInput">
+      <option value="inbound">Inbound</option>
+      <option value="outbound">Outbound</option>
+    </select>
+
+    <button onclick="saveResi()">Simpan</button>
+
+    <h2>History</h2>
+    <div id="history"></div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
